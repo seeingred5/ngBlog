@@ -5,7 +5,8 @@ angular.module('ngBlogApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'hc.marked'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

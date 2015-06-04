@@ -5,6 +5,13 @@ angular.module('ngBlogApp')
     $routeProvider
       .when('/admin', {
         templateUrl: 'app/admin/admin.html',
-        controller: 'AdminCtrl'
+        controller: 'AdminCtrl',
+	resolve: {
+	  resPost: ['$http', function($http) {
+	    return $http.get('/api/posts/').success(function(data) {
+	      return data.data;
+	    });
+	  }]
+	}
       });
   });
